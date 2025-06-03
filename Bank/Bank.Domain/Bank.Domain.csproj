@@ -5,8 +5,18 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <NoWarn>1591</NoWarn> <!-- Oculta advertencias por miembros públicos sin comentarios -->
-
+    <NoWarn>1591</NoWarn>
+    <Version>2022074263</Version>
+    <Authors>LuzkalidGM</Authors>
+    <Company>UPT</Company>
+    <Description>Bank Domain Library - Sistema bancario con funcionalidades de cuenta</Description>
+    <PackageTags>bank;domain;account;finance</PackageTags>
+    <RepositoryUrl>https://github.com/UPT-FAING-EPIS/lab-2025-i-si784-u2-03-cs-LuzkalidGM</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/UPT-FAING-EPIS/lab-2025-i-si784-u2-03-cs-LuzkalidGM</PackageProjectUrl>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
 
 </Project>
