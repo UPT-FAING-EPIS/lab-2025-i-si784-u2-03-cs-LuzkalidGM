@@ -9,11 +9,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    # ...existing code...
+    
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: '8.0.x'
+
+    - name: Install DocFX
+      run: dotnet tool install -g docfx
 
     - name: Restore dependencies
       run: |
@@ -25,12 +28,30 @@ jobs:
         cd Bank
         dotnet build --no-restore
 
+    - name: Run tests with coverage
+      run: |
+        cd Bank
+        dotnet test --collect:"XPlat Code Coverage" --results-directory ./TestResults
+
+    - name: Generate coverage report
+      run: |
+        cd Bank
+        dotnet tool install -g dotnet-reportgenerator-globaltool
+        reportgenerator -reports:"TestResults/**/coverage.cobertura.xml" -targetdir:"./Cobertura" -reporttypes:Html
+
     - name: Build Documentation
       run: docfx docfx.json
 
-    - name: Deploy to GitHub Pages
+    - name: Deploy Coverage Report to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./Bank/Cobertura
+        destination_dir: coverage
+
+    - name: Deploy Documentation to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./_site
-# ...existing code...
+        destination_dir: docs
