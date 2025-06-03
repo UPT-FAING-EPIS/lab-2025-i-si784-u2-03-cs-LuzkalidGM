@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <NoWarn>1591</NoWarn>
-    <Version>2022074263</Version>
+    <Version>1.0.2022074263</Version>
     <Authors>LuzkalidGM</Authors>
     <Company>UPT</Company>
     <Description>Bank Domain Library - Sistema bancario con funcionalidades de cuenta</Description>

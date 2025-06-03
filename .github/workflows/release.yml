@@ -38,7 +38,7 @@ jobs:
       - name: Empaquetar NuGet (versión de matrícula)
         run: |
           cd Bank
-          dotnet pack Bank.Domain/Bank.Domain.csproj --configuration Release -p:PackageVersion=2022074263 -o ../nuget
+          dotnet pack Bank.Domain/Bank.Domain.csproj --configuration Release -p:PackageVersion=1.0.2022074263 -o ../nuget
 
       - name: Publicar paquete en GitHub Packages
         run: dotnet nuget push ./nuget/*.nupkg --source "github" --api-key ${{ secrets.GITHUB_TOKEN }}
@@ -46,6 +46,6 @@ jobs:
       - name: Crear GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v2022074263
-          name: Release v2022074263
+          tag_name: v1.0.2022074263
+          name: Release v1.0.2022074263
           files: ./nuget/*.nupkg
