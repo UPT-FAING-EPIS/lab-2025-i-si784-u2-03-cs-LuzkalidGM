@@ -4,7 +4,7 @@
 
 ## OBJETIVOS
   * Comprender el funcionamiento de las pruebas unitarias dentro de una aplicación utilizando el Framework de pruebas NUnit.
-
+### Nombre: GABRIELA LUZKALID GUTIERREZ MAMANI
 ## REQUERIMIENTOS
   * Conocimientos: 
     - Conocimientos básicos de Bash (powershell).
